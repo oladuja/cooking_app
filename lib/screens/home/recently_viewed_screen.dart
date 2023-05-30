@@ -20,6 +20,7 @@ class RecentlyViewedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Recipes recipes = Provider.of<Recipes>(context)
       ..generateRecentlyViewedList();
+    print(recipes.recentlyViewedRecipeList);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

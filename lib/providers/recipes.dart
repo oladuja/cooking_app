@@ -86,8 +86,14 @@ class Recipes extends ChangeNotifier {
   List<Recipe> get recomendedList => _recomendedList;
 
   void clearViewedList() {
-    recentlyViewedRecipeList.clear();
-    print(recentlyViewedRecipeList.toList());
+    for (var recipe in _recipesList) {
+      recipe.isVIewed = false;
+    }
+
+    for (var recipe in _recomendedList) {
+      recipe.isVIewed = false;
+    }
+
     notifyListeners();
   }
 
@@ -104,7 +110,6 @@ class Recipes extends ChangeNotifier {
         .firstWhere((recipe) => recipe.foodName == name);
 
     recipe.isVIewed = true;
-    print(recipe.isVIewed);
     notifyListeners();
   }
 
