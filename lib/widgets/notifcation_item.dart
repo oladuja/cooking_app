@@ -22,42 +22,24 @@ class NotifcationItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
           color: Colors.white,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(
-                  Icons.delete_outline_outlined,
+        child: Align(
+          alignment: Alignment.centerRight,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(
+                Icons.delete_outline_outlined,
+                color: AppColor.darkTextColor,
+              ),
+              Text(
+                'Remove',
+                style: TextStyle(
                   color: AppColor.darkTextColor,
+                  fontSize: 12.sp,
                 ),
-                Text(
-                  'Remove',
-                  style: TextStyle(
-                    color: AppColor.darkTextColor,
-                    fontSize: 12.sp,
-                  ),
-                )
-              ],
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(
-                  Icons.delete_outline_outlined,
-                  color: AppColor.darkTextColor,
-                ),
-                Text(
-                  'Remove',
-                  style: TextStyle(
-                    color: AppColor.darkTextColor,
-                    fontSize: 12.sp,
-                  ),
-                )
-              ],
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       ),
       key: ValueKey(index),
